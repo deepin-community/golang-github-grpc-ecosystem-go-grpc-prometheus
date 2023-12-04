@@ -1,4 +1,22 @@
 #!/usr/bin/make -f
 
+# Do not build examples, but install them.
+export DH_GOLANG_EXCLUDES := examples/
+export DH_GOLANG_EXCLUDES_ALL := 0
+export DH_GOPKG := github.com/grpc-ecosystem/go-grpc-prometheus
+export DH_VERBOSE=1
+
+BUILDDIR := $(CURDIR)/build_
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang --builddirectory=$(BUILDDIR)
+
+override_dh_auto_configure:
+	dh_auto_configure
+	# Rebuild protobuf.
+	( cd $(BUILDDIR)/src/$(DH_GOPKG)/examples/testproto; \
+	    protoc -I. \
+	        -I${BUILDDIR}/src \
+	        --go_out=plugins=grpc:. \
+	        test.proto; \
+	)
