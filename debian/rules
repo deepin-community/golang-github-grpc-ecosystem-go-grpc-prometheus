@@ -18,5 +18,9 @@ override_dh_auto_configure:
 	    protoc -I. \
 	        -I${BUILDDIR}/src \
 	        --go_out=plugins=grpc:. \
+		--go_opt=Mtest.proto=github.com/grpc-ecosystem/go-grpc-prometheus/examples/testproto \
 	        test.proto; \
 	)
+
+override_dh_auto_test:
+	DH_GOLANG_EXCLUDES=packages/grpcstatus dh_auto_test $(DH_BUILD_OPTS)
