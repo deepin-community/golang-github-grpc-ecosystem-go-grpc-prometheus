@@ -8,6 +8,7 @@ License: Apache-2.0
 
 Files: debian/*
 Copyright: 2017 Tim Potter <tpot@hpe.com>
+           2024 Simon Josefsson <simon@josefsson.org>
 License: Apache-2.0
 Comment: Debian packaging is licensed under the same terms as upstream
 

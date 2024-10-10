@@ -1,3 +1,31 @@
+golang-github-grpc-ecosystem-go-grpc-prometheus (1.2.0+git20191002.6af20e3-5) unstable; urgency=medium
+
+  * Team upload
+  * Upload changes from experimental to unstable
+  * d/control:
+    - Update Build-Depends and Depends from golang-goprotobuf-dev to
+      golang-github-golang-protobuf-1-5-dev
+    - Update Standards-Version to 4.7.0 (no changes needed)
+
+ -- Mathias Gibbens <gibmat@debian.org>  Tue, 30 Jul 2024 07:09:30 +0000
+
+golang-github-grpc-ecosystem-go-grpc-prometheus (1.2.0+git20191002.6af20e3-4) experimental; urgency=medium
+
+  [ Simon Josefsson ]
+  * Team upload.
+  * Exclude grpc test, for grpc > 1.60 compatibility.
+  * Bump Standards-Version to 4.6.2.
+  * Bump watch version to 4.
+  * Use Section: golang instead of devel.
+  * Bump debhelper-compat from 12 to 13.
+  * Silence update-debian-copyright.
+  * Add d/upstream/metadata.
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+
+ -- Simon Josefsson <simon@josefsson.org>  Mon, 12 Feb 2024 20:27:29 +0100
+
 golang-github-grpc-ecosystem-go-grpc-prometheus (1.2.0+git20191002.6af20e3-3) unstable; urgency=medium
 
   * Team upload.
